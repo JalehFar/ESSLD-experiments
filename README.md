@@ -1,4 +1,4 @@
-#Efficient Sea-Sky Line Detection
+# Efficient Sea-Sky Line Detection
 
 This repository contains the official implementation code for the paper: "Efficient Sea-Sky Line Detection via Lightweight Segmentation and Dual Multi-Scale Fusion".
 The system consists of a lightweight semantic segmentation network (DCEUNet) followed by a robust dual multi-scale fusion refinement module.
@@ -82,3 +82,4 @@ If you find this work useful, please cite our paper:
 This project is released under the **MIT License**.
 
 The code is provided "as is", without warranty of any kind. Users are responsible for parameter tuning and validation in their specific environments.
+
