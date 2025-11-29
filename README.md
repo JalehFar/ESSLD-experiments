@@ -1,14 +1,15 @@
-Efficient Sea-Sky Line Detection
+#Efficient Sea-Sky Line Detection
 
 This repository contains the official implementation code for the paper: "Efficient Sea-Sky Line Detection via Lightweight Segmentation and Dual Multi-Scale Fusion".
 The system consists of a lightweight semantic segmentation network (DCEUNet) followed by a robust dual multi-scale fusion refinement module.
 
-📝 Project Overview
+## 📝 Project Overview
 
 This codebase serves as a consolidated reference implementation derived from the experimental framework used in the paper. It has been streamlined to facilitate the fundamental reproduction of the core algorithms (DCEUNet architecture + Fusion logic) while maintaining code clarity and ease of use for the research community.
 
-📂 Project Structure
+## 📂 Project Structure
 
+```text
 .
 ├── config.py           # Configuration parameters (Generic defaults)
 ├── demo.py             # Image inference script (Visualization mode)
@@ -16,50 +17,46 @@ This codebase serves as a consolidated reference implementation derived from the
 ├── models/             # DCEUNet and attention modules
 ├── utils/              # Refinement algorithms (HLDA, Geometric, etc.)
 ├── weights/            # Pre-trained models
-├── samples/            # Test samples (images and video clips)      
+├── samples/            # Test samples (images and video clips)
+``` 
 
-📷 Sample Data
+## 📷 Sample Data
 
 The sample data provided in the samples/ directory are extracted from publicly available maritime video datasets used in the paper's experiments. They are provided here solely for the purpose of demonstrating the inference pipeline.
 
-🚀 Quick Start
+## 🚀 Quick Start
 
-1. Requirements
+### 1. Requirements
 
 Install dependencies using pip:
 
-pip install -r requirements.txt
+**pip install -r requirements.txt**
 
-
-2. Run Image Demo (Instant View)
+### 2. Run Image Demo (Instant View)
 
 Run the script to visualize the segmentation mask and the refined horizon line side-by-side.
 
-# Usage: python demo.py <image_path>
-python demo.py samples/test_1.png
-
+**python demo.py samples/test_1.png**
 
 Output: A window will pop up showing the Coarse Mask (Left) and the Final Detection Result (Right).
 
 Controls: Press any key to close the window.
 
-3. Run Video Demo (Real-Time)
+### 3. Run Video Demo (Real-Time)
 
-To test the detection speed and performance on a video file. This script runs in FP16 half-precision mode (if CUDA is available) to demonstrate real-time capability.
+To test the detection performance on a video file. This script runs in FP16 half-precision mode (if CUDA is available) to demonstrate real-time capability.
 
-# Usage: python demo_video.py --input <video_path>
-python demo_video.py --input samples/test_video.mp4
-
+**python demo_video.py --input samples/test_video.mp4**
 
 Controls: Press 'Q' to quit playback.
 
-📊 Performance & Reproducibility
+## 📊 Performance & Reproducibility
 
 Lightweight Architecture: The provided DCEUNet features <0.4M parameters, specifically designed for edge devices.
 
 FP16 Optimization: The video demo supports half-precision (FP16) inference on CUDA devices, significantly boosting FPS for real-time applications.
 
-⚠️ Limitations of the Demo & Usage Notes
+## ⚠️ Limitations of the Demo & Usage Notes
 
 To ensure operational convenience and broad accessibility, this repository provides simplified inference demos. Please consider the following when reproducing results:
 
@@ -69,7 +66,9 @@ Hardware-Dependent Tuning: Due to variations in computational performance (e.g.,
 
 Parameter Sensitivity: The fusion parameters were optimized for specific environmental conditions (e.g., heavy fog vs. clear day) in the paper's experiments. If testing on samples with significantly different distributions, parameter adjustment is recommended.
 
-📜 CitationIf you find this work useful, please cite our paper:
+## 📜 Citation
+
+If you find this work useful, please cite our paper:
 
 @article{chen2025SeaSky,
   title={Efficient Sea-Sky Line Detection via Lightweight Segmentation and Dual Multi-Scale Fusion},
@@ -78,7 +77,8 @@ Parameter Sensitivity: The fusion parameters were optimized for specific environ
   year={2025}
 }
 
-📄 License
+## 📄 License
 
 This project is released under the **MIT License**.
+
 The code is provided "as is", without warranty of any kind. Users are responsible for parameter tuning and validation in their specific environments.
