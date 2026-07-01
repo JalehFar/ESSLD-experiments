@@ -3,6 +3,8 @@
 This repository contains the official implementation code for the paper: "Efficient Sea-Sky Line Detection via Lightweight Segmentation and Dual Multi-Scale Fusion".
 The system consists of a lightweight semantic segmentation network (DCEUNet) followed by a robust dual multi-scale fusion refinement module.
 
+This repository is a modified fork of [kaibaJC/ESSLD](https://github.com/kaibaJC/ESSLD), with added ONNX export and verification support.
+
 ## 📝 Project Overview
 
 This codebase serves as a consolidated reference implementation derived from the experimental framework used in the paper. It has been streamlined to facilitate the fundamental reproduction of the core algorithms (DCEUNet architecture + Fusion logic) while maintaining code clarity and ease of use for the research community.
@@ -49,6 +51,22 @@ To test the detection performance on a video file. This script runs in FP16 half
 **python demo_video.py --input samples/test_video.mp4**
 
 Controls: Press 'Q' to quit playback.
+
+### 4. Export ONNX Model
+
+Export the provided PyTorch weights to ONNX:
+
+**python export_onnx.py --verify**
+
+This creates:
+
+**weights/dceunetex.onnx**
+
+To compare the PyTorch and ONNX outputs on a sample image:
+
+**python compare_pth_onnx.py samples/test_1.png**
+
+The comparison script reports logit/probability differences and binary mask pixel differences, and saves visual comparisons under **outputs/onnx_compare/**.
 
 ## 📊 Performance & Reproducibility
 

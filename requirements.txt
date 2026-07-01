@@ -1,25 +1,30 @@
-Core Deep Learning
+# Core Deep Learning
 
 torch>=2.0.0
 torchvision>=0.15.0
 
-Image Processing & Math
+# Image Processing & Math
 
 numpy>=1.23.0
 opencv-python>=4.6.0
 scikit-learn>=1.2.0
 scipy>=1.10.0
 
-Acceleration & Utilities
+# Acceleration & Utilities
 
 numba>=0.56.0
 thop>=0.1.1
 tqdm>=4.65.0
 
-MMCV (Computer Vision Utilities)
+# ONNX Export & Verification
 
-Note: Usually installed via mim, but listed here for completeness.
+onnx>=1.14.0
+onnxruntime>=1.16.0
 
-If installation fails, try: pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html
+# MMCV (Computer Vision Utilities)
+
+# Note: Usually installed via mim, but listed here for completeness.
+
+# If installation fails, try: pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html
 
 mmcv-full>=1.7.0
